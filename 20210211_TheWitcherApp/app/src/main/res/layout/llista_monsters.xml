@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/imgMonster"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bestiary_cards_beasts">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_marginBottom="60dp">
+
+        <TextView
+            android:id="@+id/txtTitolMonster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Beasts"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:fontFamily="@font/the_witcher"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/txtSubtitolMonster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ctr_kur_start"
+            android:gravity="center"
+            android:layout_marginTop="-20dp"
+            android:text="Wild of the Land"
+            android:textColor="#60686868"
+            android:textSize="36dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</RelativeLayout>

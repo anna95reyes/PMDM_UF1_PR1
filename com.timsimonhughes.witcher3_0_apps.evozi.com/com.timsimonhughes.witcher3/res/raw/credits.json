@@ -1,0 +1,21 @@
+{
+	"loris": { "name": "Loris Stavrinides",
+		"title": "Design & Creative/Art Direction",
+		"info": "Loris is a multidisciplinary designer & artist with big passion about gaming and fantasy art. Witcher 3, being one of his most favourite video games of all time, inspired him to take upon his own adventure of crafting a unique concept for an app experience to accompany the game; which wouldn’t be a reality without this very talented team.",
+		"website":"loris-stavrinides.com",
+		"url": "https://www.loris-stavrinides.com/"
+	},
+	"jon": { "name": "Jon Fulton",
+		"title": "Technical Lead & iOS Development",
+		"info": "An avid gamer and iOS developer by trade, Jon is always looking for innovative ways to combine the two. After being introduced to the Witcher 3 on the Switch he thought how cool it would be to have a companion app for it. After seeing Loris’ amazing designs he knew it had to become a reality - made possible by this super talented team.",
+		"website":"linkedin.com/jon-fulton",
+		"url": "https://www.linkedin.com/in/jon-fulton-2aa13925/"
+	},
+	"tim": 
+	{ "name": "Tim Hughes",
+		"title": "Design & Android Development",
+		"info": "An android developer and designer, Tim can combine the best of both worlds, he can adapt any design into one suitable for the mobile platform and create a unique experience that compliments it. Having thoroughly enjoyed the Witcher 3 he jumped at the chance to help create a fan app.",
+		"website":"timsimonhughes.com",
+		"url": "http://timsimonhughes.com/"
+	}
+}
