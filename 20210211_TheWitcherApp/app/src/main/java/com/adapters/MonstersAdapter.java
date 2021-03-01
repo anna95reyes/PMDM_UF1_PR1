@@ -51,13 +51,11 @@ public class MonstersAdapter extends RecyclerView.Adapter<MonstersAdapter.ViewHo
         int drawableResourceId = context.getResources().getIdentifier(m.getImage(), "drawable", context.getPackageName());
         holder.imgMonster.setBackgroundResource(drawableResourceId);
 
-        /*
         if(position==filaSeleccionada) {
             holder.borderMonster.setBackgroundColor(Color.YELLOW);
         } else {
-            holder.borderMonster.setBackgroundColor(Color.LTGRAY);
+            holder.borderMonster.setBackgroundColor(Color.TRANSPARENT);
         }
-        */
     }
 
     @Override
@@ -76,6 +74,7 @@ public class MonstersAdapter extends RecyclerView.Adapter<MonstersAdapter.ViewHo
             imgMonster = fila.findViewById(R.id.imgMonster);
             txtTitolMonster = fila.findViewById(R.id.txtTitolMonster);
             txtSubtitolMonster = fila.findViewById(R.id.txtSubtitolMonster);
+            borderMonster = fila.findViewById(R.id.borderMonster);
             fila.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
