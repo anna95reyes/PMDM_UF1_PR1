@@ -9,21 +9,21 @@ public class Bestiary {
 
     @SerializedName("sections")
     @Expose
-    private List<MonsterType> monsters = null;
+    private List<MonsterType> monsterTypes = null;
 
-    public List<MonsterType> getMonsters() {
-        return monsters;
+    public List<MonsterType> getMonsterTypes() {
+        return monsterTypes;
     }
 
-    public void setMonsters(List<MonsterType> monsters) {
-        this.monsters = monsters;
+    public void setMonsterTypes(List<MonsterType> monsterTypes) {
+        this.monsterTypes = monsterTypes;
     }
 
 
     @Override
     public String toString() {
         return "Bestiary{" +
-                "sections=" + monsters +
+                "sections=" + monsterTypes +
                 '}';
     }
 }

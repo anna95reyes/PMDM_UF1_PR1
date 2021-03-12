@@ -2,11 +2,9 @@ package com.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,21 +13,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.SelectedItemListener;
-import com.example.Bestiary;
-import com.example.Monster;
 import com.example.MonsterType;
 import com.thewitcherapp.R;
 
 import java.util.List;
 
-public class MonstersAdapter extends RecyclerView.Adapter<MonstersAdapter.ViewHolder> {
-    private List<MonsterType> mMonsters;
+public class MonsterTypeAdapter extends RecyclerView.Adapter<MonsterTypeAdapter.ViewHolder> {
+    private List<MonsterType> mMonstersType;
     private SelectedItemListener mActivity;
     private Context context;
 
-    public MonstersAdapter(List<MonsterType> pMonsters, SelectedItemListener activity, Context c){
+    public MonsterTypeAdapter(List<MonsterType> pMonstersType, SelectedItemListener activity, Context c){
         // desem les dades a un atribut de la classe
-        mMonsters = pMonsters;
+        mMonstersType = pMonstersType;
         mActivity= activity;
         context = c;
     }
@@ -39,52 +35,55 @@ public class MonstersAdapter extends RecyclerView.Adapter<MonstersAdapter.ViewHo
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
         View filaView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.llista_monsters, viewGroup, false);
+                .inflate(R.layout.llista_monsters_type, viewGroup, false);
         return new ViewHolder(filaView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        MonsterType m = mMonsters.get(position);
-        holder.txtTitolMonster.setText(m.getTitle());
-        holder.txtSubtitolMonster.setText(m.getSubtitle());
+        MonsterType m = mMonstersType.get(position);
+        holder.txtTitolMonsterType.setText(m.getTitle());
+        holder.txtSubtitolMonsterType.setText(m.getSubtitle());
         int drawableResourceId = context.getResources().getIdentifier(m.getImage(), "drawable", context.getPackageName());
-        holder.imgMonster.setBackgroundResource(drawableResourceId);
+        holder.imgMonsterType.setBackgroundResource(drawableResourceId);
 
         if(position==filaSeleccionada) {
-            holder.borderMonster.setBackgroundColor(Color.YELLOW);
+            holder.borderMonsterType.setBackgroundColor(Color.YELLOW);
+
         } else {
-            holder.borderMonster.setBackgroundColor(Color.TRANSPARENT);
+            holder.borderMonsterType.setBackgroundColor(Color.TRANSPARENT);
         }
     }
 
     @Override
     public int getItemCount() {
-        return mMonsters.size();
+        return mMonstersType.size();
     }
     private int filaSeleccionada = -1;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public LinearLayout borderMonster;
-        public RelativeLayout imgMonster;
-        public TextView txtTitolMonster;
-        public TextView txtSubtitolMonster;
+        public LinearLayout borderMonsterType;
+        public RelativeLayout imgMonsterType;
+        public TextView txtTitolMonsterType;
+        public TextView txtSubtitolMonsterType;
+
         public ViewHolder(@NonNull View fila) {
             super(fila);
-            imgMonster = fila.findViewById(R.id.imgMonster);
-            txtTitolMonster = fila.findViewById(R.id.txtTitolMonster);
-            txtSubtitolMonster = fila.findViewById(R.id.txtSubtitolMonster);
-            borderMonster = fila.findViewById(R.id.borderMonster);
+            imgMonsterType = fila.findViewById(R.id.imgMonsterType);
+            txtTitolMonsterType = fila.findViewById(R.id.txtTitolMonsterType);
+            txtSubtitolMonsterType = fila.findViewById(R.id.txtSubtitolMonsterType);
+            borderMonsterType = fila.findViewById(R.id.borderMonsterType);
+
             fila.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     int seleccionadaAnterior = filaSeleccionada;
                     filaSeleccionada = getAdapterPosition();
                     //notifyDataSetChanged();
                     notifyItemChanged(filaSeleccionada);
                     notifyItemChanged(seleccionadaAnterior);
-                    mActivity.onSelectedItem(filaSeleccionada);
+                    MonsterType monsterType = mMonstersType.get(filaSeleccionada);
+                    mActivity.onSelectedItem(monsterType);
                 }
             });
         }

@@ -5,25 +5,26 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.SelectedItemListener;
-import com.adapters.MonstersAdapter;
+import com.adapters.MonsterAdapter;
+import com.adapters.MonsterTypeAdapter;
 import com.example.Bestiary;
+import com.example.MonsterType;
 import com.google.gson.Gson;
-import com.thewitcherapp.databinding.ActivityMainBinding;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
 
-//import com.thewitcherapp.databinding.ActivityMainBinding;
+import com.thewitcherapp.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity implements SelectedItemListener {
 
     ActivityMainBinding binding;
+    RecyclerView rcyLlistaMonstersType;
     RecyclerView rcyLlistaMonsters;
 
     @Override
@@ -41,15 +42,22 @@ public class MainActivity extends AppCompatActivity implements SelectedItemListe
         //txvSortida.setText(b.toString());
 
 
-        rcyLlistaMonsters = findViewById(R.id.rcyLlistaMonsters);
-        rcyLlistaMonsters.setLayoutManager(
+        rcyLlistaMonstersType = findViewById(R.id.rcyLlistaMonstersType);
+        rcyLlistaMonstersType.setLayoutManager(
                 new LinearLayoutManager(this,
                         LinearLayoutManager.HORIZONTAL,
                         false));
-        rcyLlistaMonsters.setHasFixedSize(true);
+        rcyLlistaMonstersType.setHasFixedSize(true);
         // ara li posem l'adapter
-        MonstersAdapter adapter = new MonstersAdapter(b.getMonsters(),this, this);
-        rcyLlistaMonsters.setAdapter(adapter);
+        MonsterTypeAdapter adapterMonsterType = new MonsterTypeAdapter(b.getMonsterTypes(),this, this);
+        rcyLlistaMonstersType.setAdapter(adapterMonsterType);
+
+        rcyLlistaMonsters = findViewById(R.id.rcyLlistaMonsters);
+        rcyLlistaMonsters.setLayoutManager(
+                new LinearLayoutManager(this,
+                        LinearLayoutManager.VERTICAL,
+                        false));
+        rcyLlistaMonsters.setHasFixedSize(true);
 
     }
 
@@ -90,6 +98,9 @@ public class MainActivity extends AppCompatActivity implements SelectedItemListe
     }
 
     @Override
-    public void onSelectedItem(int filaSeleccionada) {
+    public void onSelectedItem(MonsterType monsterType) {
+        Bestiary b = loadBestiary();
+        MonsterAdapter adapterMonster = new MonsterAdapter(monsterType.getEntries(),this, this);
+        rcyLlistaMonsters.setAdapter(adapterMonster);
     }
 }
