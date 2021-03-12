@@ -9,8 +9,7 @@
 
     <RelativeLayout android:id="@+id/imgMonsterType"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bestiary_cards_beasts">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,9 +24,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/the_witcher"
                 android:gravity="center"
-                android:text="Beasts"
                 android:textColor="@color/white"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textStyle="bold"></TextView>
 
             <TextView
@@ -37,9 +35,8 @@
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/ctr_kur_start"
                 android:gravity="center"
-                android:text="Wild of the Land"
                 android:textColor="#60686868"
-                android:textSize="10dp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </RelativeLayout>
