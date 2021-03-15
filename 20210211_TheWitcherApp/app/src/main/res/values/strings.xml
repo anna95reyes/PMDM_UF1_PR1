@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TheWitcherApp</string>
+    <string name="title_bestiary">BESTIARY</string>
+    <string name="description_bestiary">ENCYCLOPEDIA OF ENEMIES</string>
 </resources>
