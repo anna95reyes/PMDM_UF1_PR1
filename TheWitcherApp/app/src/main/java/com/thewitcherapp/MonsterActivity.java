@@ -28,5 +28,7 @@ public class MonsterActivity extends AppCompatActivity {
         html = html.replaceAll("\\{\\{INTRO\\}\\}", intro);
         html = html.replaceAll("\\{\\{AUTHOR\\}\\}", author);
         html = html.replaceAll("\\{\\{DETAIL\\}\\}", detail);
+
+        webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
     }
 }
