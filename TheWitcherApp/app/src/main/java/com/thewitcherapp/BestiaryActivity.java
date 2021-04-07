@@ -12,6 +12,7 @@ import com.SelectedMonsterType;
 import com.adapters.MonsterAdapter;
 import com.adapters.MonsterTypeAdapter;
 import com.example.Bestiary;
+import com.example.Monster;
 import com.example.MonsterType;
 import com.google.gson.Gson;
 import com.thewitcherapp.databinding.ActivityBestiaryBinding;
