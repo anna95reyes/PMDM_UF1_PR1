@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="-70dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/image_witcher_3_logo"></ImageView>
 
     <ImageView android:id="@+id/imvAlchemy"
@@ -22,7 +22,7 @@
         android:layout_height="120dp"
         android:src="@drawable/logo_alchemy"
         android:layout_gravity="center"
-        android:layout_marginTop="-60dp"
+        android:layout_marginTop="100dp"
         android:onClick="click_alchemy"
         ></ImageView>
 
@@ -60,13 +60,14 @@
             android:layout_marginLeft="10dp"
             android:src="@drawable/previous_activity"
             android:onClick="click_activity_main"></ImageView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:layout_width="360dp"
             android:layout_height="match_parent"
-            android:layout_marginBottom="15dp"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-50dp"
+            android:layout_marginBottom="15dp">
 
             <RadioButton
                 android:id="@+id/rdbPagPrincipal"
@@ -79,14 +80,11 @@
                 android:id="@+id/rdbPagSecundaria"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:checked="true"
                 android:buttonTint="@color/yellow_radio_button"
+                android:checked="true"
                 android:gravity="bottom"></RadioButton>
 
-        </LinearLayout>
-
-
+        </RadioGroup>
 
     </GridLayout>
-
 </LinearLayout>

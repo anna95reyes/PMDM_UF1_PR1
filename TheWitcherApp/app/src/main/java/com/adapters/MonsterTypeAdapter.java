@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.SelectedItemListener;
+import com.SelectedMonsterType;
 import com.example.MonsterType;
 import com.thewitcherapp.R;
 
@@ -20,10 +20,10 @@ import java.util.List;
 
 public class MonsterTypeAdapter extends RecyclerView.Adapter<MonsterTypeAdapter.ViewHolder> {
     private List<MonsterType> mMonstersType;
-    private SelectedItemListener mActivity;
+    private SelectedMonsterType mActivity;
     private Context context;
 
-    public MonsterTypeAdapter(List<MonsterType> pMonstersType, SelectedItemListener activity, Context c){
+    public MonsterTypeAdapter(List<MonsterType> pMonstersType, SelectedMonsterType activity, Context c){
         // desem les dades a un atribut de la classe
         mMonstersType = pMonstersType;
         mActivity= activity;
@@ -83,7 +83,7 @@ public class MonsterTypeAdapter extends RecyclerView.Adapter<MonsterTypeAdapter.
                     notifyItemChanged(filaSeleccionada);
                     notifyItemChanged(seleccionadaAnterior);
                     MonsterType monsterType = mMonstersType.get(filaSeleccionada);
-                    mActivity.onSelectedItem(monsterType);
+                    mActivity.onSelectedMonsterType(monsterType);
                 }
             });
         }

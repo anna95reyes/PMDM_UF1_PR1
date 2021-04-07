@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.SelectedItemListener;
+import com.SelectedMonsterType;
 import com.adapters.MonsterAdapter;
 import com.adapters.MonsterTypeAdapter;
 import com.example.Bestiary;
@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class BestiaryActivity  extends AppCompatActivity implements SelectedItemListener {
+public class BestiaryActivity  extends AppCompatActivity implements SelectedMonsterType {
 
     ActivityBestiaryBinding binding;
     RecyclerView rcyLlistaMonstersType;
@@ -98,7 +98,7 @@ public class BestiaryActivity  extends AppCompatActivity implements SelectedItem
     }
 
     @Override
-    public void onSelectedItem(MonsterType monsterType) {
+    public void onSelectedMonsterType(MonsterType monsterType) {
         Bestiary b = loadBestiary();
         MonsterAdapter adapterMonster = new MonsterAdapter(monsterType.getEntries(),this, this);
         rcyLlistaMonsters.setAdapter(adapterMonster);
